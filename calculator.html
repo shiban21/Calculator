@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+
+
+            height: 100vh;
+            
+      
+
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .parent-div{
+            height: 500px;
+            width: 350px;
+            background-color: rgb(33, 33, 33);
+            border-radius: 50px;
+            padding: 30px;
+            box-shadow: 0px 0px 40px black;
+        }
+        .output{
+            height: 75px;
+            width: 90%;
+            font-size: 40px;
+            text-align: right;
+            padding: 0px 20px;
+            background-color: rgb(31, 32, 32);
+            border: none;
+        }
+        input{
+            height: 70px;
+            width: 70px;
+            margin: 5px;
+            border-radius: 35px;
+            background-color: rgb(78, 79, 79);
+            color: rgb(255, 255, 255);
+            border: none;
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+        input.hover{
+            cursor: pointer;
+            
+        }
+        .zero{
+            width: 160px;
+        }
+        input[name="operator"]{
+            background-color: rgb(240, 104, 1);
+        }
+        .gry{
+            background-color: rgb(144, 144, 144);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="parent-div">
+        <form >
+            <div class="data">
+                <input type="text" name="op" class="output " disabled >
+            </div>
+            <div>
+                <input type="button" name="ac" value="AC" onclick="op.value=''" class="gry">
+                <input type="button" name="c" value="C" onclick="op.value=op.value.slice(0,-1)" class="gry">
+                <input type="button" class="gry" value="%" onclick="op.value+='%'">
+                <input type="button" name="operator" value="/" onclick="op.value+='/'">
+            </div>
+            <div>
+                <input type="button" name="num" value="7" onclick="op.value+='7'">
+                <input type="button" name="num" value="8" onclick="op.value+='8'">
+                <input type="button" name="num" value="9" onclick="op.value+='9'">
+                <input type="button" name="operator" value="x" onclick="op.value+='*'">
+            </div>
+            <div>
+                <input type="button" name="num" value="4" onclick="op.value+='4'">
+                <input type="button" name="num" value="5" onclick="op.value+='5'">
+                <input type="button" name="num" value="6" onclick="op.value+='6'">
+                <input type="button" name="operator" value="-" onclick="op.value+='-'">
+            </div>
+            <div>
+                <input type="button" name="num" value="1" onclick="op.value+='1'">
+                <input type="button" name="num" value="2" onclick="op.value+='2'">
+                <input type="button" name="num" value="3" onclick="op.value+='3'">
+                <input type="button" name="operator" value="+" onclick="op.value+='+'">
+            </div>
+            <div>
+                <input type="button" name="num" value="0" class="zero" op.value+='0'">
+                <input type="button" name="operator" value="." onclick="op.value+='.'">
+                <input type="button" name="operator" value="=" onclick="op.value= eval(op.value)">
+            </div>
+    </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
